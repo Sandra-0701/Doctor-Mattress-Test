@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Mattress - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D61261',  // Vibrant pink
+                        secondary: '#2688D8', // Trustworthy blue
+                        accent: '#FF9933',    // Saffron orange
+                        indigo: '#4B0082',    // Traditional indigo
+                        teal: '#008080',      // Earthy teal
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .sidebar-hover:hover {
+            background-color: rgba(214, 18, 97, 0.1);
+            border-left: 3px solid #D61261;
+        }
+        .stats-gradient {
+            background: linear-gradient(135deg, #D61261 0%, #2688D8 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <!-- Logo with Indian design elements -->
+                <div class="flex items-center justify-center h-20 px-4 bg-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-bed text-white text-3xl mr-2"></i>
+                        <div>
+                            <span class="text-white font-bold text-xl block leading-tight">Doctor Mattress</span>
+                            <span class="text-white text-xs block">स्वस्थ नींद, स्वस्थ जीवन</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Profile -->
+                <div class="p-4 border-b border-gray-200 flex items-center">
+                    <img class="w-10 h-10 rounded-full border-2 border-accent" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Admin">
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-700">Priya Sharma</p>
+                        <p class="text-xs font-medium text-gray-500">Admin</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 ml-auto"></i>
+                </div>
+                
+                <!-- Main Navigation -->
+                <div class="flex flex-col flex-grow px-2 py-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-1">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-white rounded-r-lg bg-primary">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-bed mr-3 text-indigo-600"></i>
+                            Mattress Inventory
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-rupee-sign mr-3 text-green-600"></i>
+                            Orders & Payments
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-users mr-3 text-secondary"></i>
+                            Customers
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-truck mr-3 text-accent"></i>
+                            Delivery Tracking
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-calendar-check mr-3 text-teal-600"></i>
+                            Sleep Consultation
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-chart-pie mr-3 text-purple-600"></i>
+                            Analytics
+                        </a>
+                        
+                        <!-- Divider -->
+                        <div class="px-4 pt-2">
+                            <hr class="border-gray-200">
+                            <p class="text-xs text-gray-500 mt-2 uppercase tracking-wider">Management</p>
+                        </div>
+                        
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-store mr-3 text-blue-600"></i>
+                            Store Locations
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-users-cog mr-3 text-gray-600"></i>
+                            Staff Management
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-r-lg sidebar-hover">
+                            <i class="fas fa-cog mr-3 text-gray-600"></i>
+                            Settings
+                        </a>
+                    </nav>
+                </div>
+                
+                <!-- Help Section -->
+                <div class="p-4 border-t border-gray-200 bg-gray-50">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-gray-500">Need help?</p>
+                            <a href="#" class="text-sm font-medium text-primary">Contact Support</a>
+                        </div>
+                        <button class="p-2 rounded-full bg-primary bg-opacity-10 text-primary">
+                            <i class="fas fa-headset"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top Navigation -->
+            <div class="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200">
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="ml-4 text-lg font-semibold text-gray-800">Dashboard</h1>
+                </div>
+                
+                <!-- Search and controls -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative hidden md:block">
+                        <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 w-64 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-secondary">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 focus:outline-none relative">
+                            <i class="fas fa-bell"></i>
+                            <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 focus:outline-none relative">
+                            <i class="fas fa-envelope"></i>
+                            <span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+                        </button>
+                        <button class="flex items-center space-x-2 focus:outline-none">
+                            <img class="w-8 h-8 rounded-full border-2 border-accent" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Admin">
+                            <span class="hidden md:inline text-sm font-medium text-gray-700">Priya Sharma</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="flex-1 overflow-auto p-6">
+                <!-- Welcome Banner with Indian colors -->
+                <div class="stats-gradient rounded-xl shadow-md mb-6 p-6 text-white">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Welcome back, Priya!</h2>
+                            <p class="mt-1 opacity-90">Here's what's happening with Doctor Mattress today.</p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <button class="px-4 py-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition-all">
+                                <i class="fas fa-download mr-2"></i> Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Total Revenue -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-primary">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Revenue</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mt-1">₹12,84,560</h3>
+                                <p class="text-green-500 text-xs mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i> 18.5% from last month
+                                </p>
+                            </div>
+                            <div class="p-3 rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-rupee-sign text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Total Orders -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-secondary">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Orders</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mt-1">1,245</h3>
+                                <p class="text-green-500 text-xs mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i> 8.3% from last month
+                                </p>
+                            </div>
+                            <div class="p-3 rounded-full bg-secondary bg-opacity-10 text-secondary">
+                                <i class="fas fa-shopping-bag text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- New Customers -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-accent">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">New Customers</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mt-1">342</h3>
+                                <p class="text-red-500 text-xs mt-2">
+                                    <i class="fas fa-arrow-down mr-1"></i> 3.2% from last month
+                                </p>
+                            </div>
+                            <div class="p-3 rounded-full bg-accent bg-opacity-10 text-accent">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Appointments -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-indigo">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Sleep Consultations</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mt-1">56</h3>
+                                <p class="text-green-500 text-xs mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i> 22.8% from last month
+                                </p>
+                            </div>
+                            <div class="p-3 rounded-full bg-indigo bg-opacity-10 text-indigo">
+                                <i class="fas fa-calendar-check text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Top Products Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <!-- Sales Chart -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 lg:col-span-2">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <h2 class="text-lg font-semibold text-gray-800">Sales Performance</h2>
+                            <div class="mt-3 md:mt-0 flex space-x-2">
+                                <select class="px-3 py-1 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary">
+                                    <option>This Month</option>
+                                    <option>Last Month</option>
+                                    <option>This Quarter</option>
+                                    <option>This Year</option>
+                                </select>
+                                <button class="px-3 py-1 text-sm bg-primary text-white rounded-lg">
+                                    <i class="fas fa-download mr-1"></i> Export
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Chart placeholder with Indian color gradient -->
+                        <div class="h-80 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-chart-line text-4xl text-primary mb-2"></i>
+                                <p class="text-gray-500">Sales chart will appear here</p>
+                                <p class="text-xs text-gray-400 mt-1">Monthly revenue, orders, and regional performance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Products -->
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-lg font-semibold text-gray-800">Top Selling Mattresses</h2>
+                            <button class="text-sm text-primary hover:underline">View All</button>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Product 1 -->
+                            <div class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-all">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg mr-3 flex-shrink-0 overflow-hidden">
+                                    <img src="https://m.media-amazon.com/images/I/61XDeaOrrKL._AC_UF1000,1000_QL80_.jpg" alt="OrthoPlus" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-800 truncate">OrthoPlus SpineCare</p>
+                                    <p class="text-xs text-gray-500">15 sold this month</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex items-center text-yellow-400">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star-half-alt text-xs"></i>
+                                        </div>
+                                        <span class="text-xs text-gray-500 ml-1">4.5</span>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold text-primary">₹24,999</span>
+                            </div>
+                            
+                            <!-- Product 2 -->
+                            <div class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-all">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg mr-3 flex-shrink-0 overflow-hidden">
+                                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/QT/VO/JA/3033603/orthopedic-mattress.jpg" alt="Ayurveda" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-800 truncate">Ayurveda Herbal</p>
+                                    <p class="text-xs text-gray-500">12 sold this month</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex items-center text-yellow-400">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="far fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-xs text-gray-500 ml-1">4.0</span>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold text-primary">₹18,499</span>
+                            </div>
+                            
+                            <!-- Product 3 -->
+                            <div class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-all">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg mr-3 flex-shrink-0 overflow-hidden">
+                                    <img src="https://www.wakefit.co/blog/wp-content/uploads/2021/06/How-to-choose-the-best-mattress-for-back-pain.jpg" alt="SleepWell" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-800 truncate">SleepWell Royal</p>
+                                    <p class="text-xs text-gray-500">10 sold this month</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex items-center text-yellow-400">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-xs text-gray-500 ml-1">5.0</span>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold text-primary">₹32,999</span>
+                            </div>
+                            
+                            <!-- Product 4 -->
+                            <div class="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-all">
+                                <div class="w-14 h-14 bg-gray-200 rounded-lg mr-3 flex-shrink-0 overflow-hidden">
+                                    <img src="https://www.sleepwellindia.com/pub/media/catalog/product/cache/4a04a0f4cff9b7f5ae9a8b0d4a6a1b0f/m/a/mattress_catalogue_1_1.jpg" alt="ComfortPlus" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-800 truncate">ComfortPlus Dual</p>
+                                    <p class="text-xs text-gray-500">8 sold this month</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex items-center text-yellow-400">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="far fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-xs text-gray-500 ml-1">4.0</span>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-semibold text-primary">₹27,499</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders and Activity Feed -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Recent Orders -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden lg:col-span-2">
+                        <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Orders</h2>
+                            <button class="text-sm text-primary hover:underline">View All Orders</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary">#DM-2456</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">Rahul Gupta</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15 May 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">₹24,999</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Delivered</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <button class="text-secondary hover:text-primary">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary">#DM-2455</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">Priya Patel</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">14 May 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">₹18,499</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">Shipped</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <button class="text-secondary hover:text-primary">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary">#DM-2454</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">Amit Singh</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">14 May 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">₹32,999</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Processing</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <button class="text-secondary hover:text-primary">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary">#DM-2453</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">Neha Sharma</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">13 May 2023</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">₹27,499</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">Payment Pending</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <button class="text-secondary hover:text-primary">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                            <p class="text-sm text-gray-500">Showing 1 to 4 of 24 orders</p>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-lg">Previous</button>
+                                <button class="px-3 py-1 text-sm bg-primary text-white rounded-lg">1</button>
+                                <button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-lg">2</button>
+                                <button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-lg">3</button>
+                                <button class="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-lg">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Activity</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <!-- Activity Item 1 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-3">
+                                        <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-800">New order placed</p>
+                                        <p class="text-xs text-gray-500">Order #DM-2457 for ₹22,499</p>
+                                        <p class="text-xs text-gray-400 mt-1">2 minutes ago</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Activity Item 2 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-3">
+                                        <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-800">Order delivered</p>
+                                        <p class="text-xs text-gray-500">Order #DM-2452 to Rahul Gupta</p>
+                                        <p class="text-xs text-gray-400 mt-1">1 hour ago</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Activity Item 3 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-3">
+                                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-800">New customer registered</p>
+                                        <p class="text-xs text-gray-500">Sanjay Verma from Mumbai</p>
+                                        <p class="text-xs text-gray-400 mt-1">3 hours ago</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Activity Item 4 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-3">
+                                        <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center">
+                                            <i class="fas fa-calendar-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-800">Sleep consultation booked</p>
+                                        <p class="text-xs text-gray-500">With Dr. Ananya Iyer for 18 May</p>
+                                        <p class="text-xs text-gray-400 mt-1">5 hours ago</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Activity Item 5 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-3">
+                                        <div class="w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-800">Low stock alert</p>
+                                        <p class="text-xs text-gray-500">OrthoPlus SpineCare (Size: King)</p>
+                                        <p class="text-xs text-gray-400 mt-1">Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full mt-4 px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50">
+                                View All Activity
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

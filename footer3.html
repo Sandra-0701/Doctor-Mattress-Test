@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Mattresses Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'doctor-pink': '#E91E63',
+                        'doctor-blue': '#2196F3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+  <footer class="bg-white py-12">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Left Section - Contact Info -->
+        <div class="lg:col-span-1">
+          <!-- Phone -->
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.548 4.035a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.035 1.548a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span class="text-sm text-gray-700 font-medium">1800-121-9439</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-6 leading-relaxed">
+            You can reach us 7 days a week. Chat with us or call our toll-free number between 10:00 am to 7:00 pm.
+          </p>
+
+          <!-- Email -->
+          <div class="flex items-center mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:support@nikamalsleep.com" class="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+              support@nikamalsleep.com
+            </a>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="mb-8">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Sleep Made Simple</h3>
+            <form class="relative">
+              <input 
+                type="email" 
+                placeholder="Enter Your Email" 
+                class="w-full px-4 py-3 pr-20 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm"
+              >
+              <button 
+                type="submit" 
+                class="absolute right-1 top-1 bottom-1 bg-blue-600 hover:bg-blue-700 text-white px-4 rounded-md text-sm font-medium transition-colors"
+              >
+                Sign Up
+              </button>
+            </form>
+          </div>
+
+          <!-- Logo -->
+          <div class="mb-8">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-blue-500 rounded-lg flex items-center justify-center mr-3">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-gray-800">Doctor</div>
+                <div class="text-sm font-bold text-red-600">Mattresses</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Column -->
+        <div>
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Products</h4>
+          <ul class="space-y-3 mb-8">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Beds</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Pillows</a></li>
+          </ul>
+          
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Customer's Pick</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Pillows for Neck-Pain</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress for Back-Pain</a></li>
+          </ul>
+        </div>
+
+        <!-- Mattress by Size Column -->
+        <div>
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Mattress by Size</h4>
+          <ul class="space-y-3 mb-8">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">King Size Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Queen Size Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Double Bed Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Single Bed Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Size Guide</a></li>
+          </ul>
+
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Beds By Material</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Metal Beds</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Wooden Beds</a></li>
+          </ul>
+        </div>
+
+        <!-- Mattress By Material Column -->
+        <div>
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Mattress By Material</h4>
+          <ul class="space-y-3 mb-8">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Orthopedic Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Bounce Foam Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Latex Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Spring Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Coir Mattress</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Foam Mattress</a></li>
+          </ul>
+
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Beds By Size</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-blue-600 hover:text-blue-700 transition-colors font-medium">Single Beds</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Double Beds</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Queen Size Beds</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">King Size Beds</a></li>
+          </ul>
+        </div>
+
+        <!-- Shop by City & Company Column -->
+        <div>
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Shop by City</h4>
+          <ul class="space-y-3 mb-8">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Bangalore</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Chennai</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Mumbai</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Pune</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Delhi</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Mattress in Hyderabad</a></li>
+          </ul>
+
+          <h4 class="text-lg font-bold text-gray-800 mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Store Locator</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Snooze Zone</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Warranty Registration</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">FAQ</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Track Your Order</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Franchise Enquiry</a></li>
+            <li><a href="#" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Channel Partner Enquiry</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section - Payment Options and Social Media -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
+          <!-- Payment Options -->
+          <div>
+            <h4 class="text-lg font-bold text-gray-800 mb-4">Payment Options</h4>
+            <div class="flex flex-wrap gap-3">
+              <div class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-medium">VISA</div>
+              <div class="bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">MasterCard</div>
+              <div class="bg-blue-500 text-white px-3 py-1 rounded text-xs font-medium">RuPay</div>
+              <div class="bg-blue-700 text-white px-3 py-1 rounded text-xs font-medium">G Pay</div>
+              <div class="bg-gray-700 text-white px-2 py-1 rounded text-xs font-medium">NET BANKING</div>
+              <div class="bg-green-600 text-white px-3 py-1 rounded text-xs font-medium">EMI</div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <h4 class="text-lg font-bold text-gray-800 mb-4">Follow us on</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-pink-600 transition-colors">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-red-600 transition-colors">
+                <i class="fab fa-youtube text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Demo content above footer -->
+  <div class="bg-blue-900 py-3 px-4">
+        <div class="max-w-6xl mx-auto">
+            <p class="text-xs text-white/80 leading-relaxed">
+                <span class="font-semibold text-white">Popular Categories</span><br class="md:hidden">
+                Memory Foam Mattress|Orthopedic Mattress|Spring Mattress|Dual Bonded Mattress|PillowMemory Foam|Foundation|Pocket Essential Oil Pillows|Pocketet|Adjustable Sleeper Base|Mattress|Queen Size Mattress|Foam Size Mattress|Double Bed|Orthopedic Bed Orthopedic|Mattresses Bed CombFirm|Soft Bed Mattress|Queen Size Mattress|Memory Foam Bed Mattress|Bounce Foam Mattress
+            </p>
+        </div>
+    </div>
+
+    <!-- Pink Copyright Section -->
+    <div class="bg-doctor-pink py-2 px-4">
+        <div class="max-w-6xl mx-auto">
+            <p class="text-white text-xs text-center font-medium">
+                Copyright © 2025 Nitkamalsleep. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

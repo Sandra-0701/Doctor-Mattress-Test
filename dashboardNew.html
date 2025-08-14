@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Mattress - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D61261',
+                        secondary: '#2688D8',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <div class="flex items-center justify-center h-16 px-4 bg-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-bed text-white text-2xl mr-2"></i>
+                        <span class="text-white font-bold text-xl">Doctor Mattress</span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-2">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-white rounded-lg bg-primary">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-boxes mr-3"></i>
+                            Products
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            Analytics
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-cog mr-3"></i>
+                            Settings
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-gray-200">
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-gray-700">Admin User</p>
+                            <p class="text-xs font-medium text-gray-500">admin@doctormattress.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top navigation -->
+            <header class="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200">
+                <div class="flex items-center md:hidden">
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <h1 class="text-lg font-semibold text-gray-800">Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main content area -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Stats cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Revenue</p>
+                                <p class="text-2xl font-bold text-gray-800">₹1,25,480</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+12.5%</span>
+                            <span class="text-gray-500 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Orders</p>
+                                <p class="text-2xl font-bold text-gray-800">342</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-secondary bg-opacity-10 text-secondary">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+8.2%</span>
+                            <span class="text-gray-500 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Customers</p>
+                                <p class="text-2xl font-bold text-gray-800">1,234</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+5.7%</span>
+                            <span class="text-gray-500 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm">Inventory</p>
+                                <p class="text-2xl font-bold text-gray-800">568</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-secondary bg-opacity-10 text-secondary">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-red-500 text-sm font-medium">-2.3%</span>
+                            <span class="text-gray-500 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and tables -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <!-- Sales chart -->
+                    <div class="bg-white rounded-lg shadow p-6 lg:col-span-2">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-lg font-semibold text-gray-800">Sales Overview</h2>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-xs bg-primary text-white rounded">Month</button>
+                                <button class="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded">Week</button>
+                                <button class="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded">Day</button>
+                            </div>
+                        </div>
+                        <div class="h-64">
+                            <!-- Chart placeholder - would be replaced with actual chart library -->
+                            <div class="flex items-center justify-center h-full bg-gray-50 rounded-lg">
+                                <p class="text-gray-500">Sales chart will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent orders -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Orders</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-800">#ORD-1254</p>
+                                    <p class="text-sm text-gray-500">Ortho Mattress</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium text-primary">₹12,999</p>
+                                    <p class="text-xs text-gray-500">2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-800">#ORD-1253</p>
+                                    <p class="text-sm text-gray-500">Memory Foam</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium text-primary">₹18,499</p>
+                                    <p class="text-xs text-gray-500">3 days ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-800">#ORD-1252</p>
+                                    <p class="text-sm text-gray-500">Pillow Set</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium text-primary">₹2,499</p>
+                                    <p class="text-xs text-gray-500">4 days ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-800">#ORD-1251</p>
+                                    <p class="text-sm text-gray-500">Spring Mattress</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium text-primary">₹15,999</p>
+                                    <p class="text-xs text-gray-500">5 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="block mt-4 text-sm font-medium text-primary text-right">View all orders</a>
+                    </div>
+                </div>
+
+                <!-- Products table -->
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-lg font-semibold text-gray-800">Products</h2>
+                            <button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90">
+                                Add Product
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 bg-gray-200 rounded-md"></div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Ortho Spine Mattress</div>
+                                                <div class="text-sm text-gray-500">DM-ORTHO-01</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Orthopedic</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹12,999</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="#" class="text-secondary hover:text-secondary-dark mr-3">Edit</a>
+                                        <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 bg-gray-200 rounded-md"></div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Memory Foam Mattress</div>
+                                                <div class="text-sm text-gray-500">DM-MEM-02</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Memory Foam</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">32</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹18,499</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="#" class="text-secondary hover:text-secondary-dark mr-3">Edit</a>
+                                        <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 bg-gray-200 rounded-md"></div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Coir Mattress</div>
+                                                <div class="text-sm text-gray-500">DM-COIR-03</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Coir</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹8,999</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Low Stock</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="#" class="text-secondary hover:text-secondary-dark mr-3">Edit</a>
+                                        <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                        <div class="text-sm text-gray-500">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">3</span> of <span class="font-medium">12</span> results
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Previous</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-white bg-primary hover:bg-opacity-90">1</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">2</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">3</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

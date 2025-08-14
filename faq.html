@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Sleep - FAQs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Top Questions</h1>
+        
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl font-semibold text-gray-800">How does 100 nights trial work?</h2>
+                    <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-6 hidden">
+                    <p class="text-gray-600">
+                        Studies show that your body takes a few weeks to evaluate a mattress. With this, we prepared a 100 nights trial to provide you the full Emma Sleep Experience. In the unlikely event that the Emma mattress does not fit your body, we will pick it up free of charge and give you a full refund once approved by our quality assurance team.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl font-semibold text-gray-800">Do I have to pay for shipping and return fees?</h2>
+                    <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-6 hidden">
+                    <p class="text-gray-600">
+                        Answer about shipping and return fees would go here.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl font-semibold text-gray-800">Do I need to flip and ventilate it?</h2>
+                    <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-6 hidden">
+                    <p class="text-gray-600">
+                        Answer about flipping and ventilating would go here.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl font-semibold text-gray-800">Where can I track my order?</h2>
+                    <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-6 hidden">
+                    <p class="text-gray-600">
+                        Answer about order tracking would go here.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl font-semibold text-gray-800">How many days does the delivery take?</h2>
+                    <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-6 hidden">
+                    <p class="text-gray-600">
+                        Answer about delivery times would go here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle content visibility
+                    content.classList.toggle('hidden');
+                    
+                    // Rotate icon
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Close other open FAQs
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            otherToggle.nextElementSibling.classList.add('hidden');
+                            otherToggle.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+            
+            // Optional: Open first FAQ by default
+            // faqToggles[0].click();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ann Doctors Mattresses - Premium Sleep Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./sleep.avif');
+            background-size: cover;
+            background-position: center;
+            transition: background 0.5s ease;
+        }
+        
+  
+        button, a {
+            transition: all 0.3s ease;
+        }
+        
+     
+        section {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Delay animations for each section */
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.5s; }
+        section:nth-child(4) { animation-delay: 0.7s; }
+        
+       
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+        
+        .p-6:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+     
+        .fa-whatsapp {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <div class="bg-blue-900 text-white text-center py-2 text-sm transition-all duration-300 hover:bg-blue-800">
+        Under Construction – Launching Soon
+    </div>
+
+    <header class="container mx-auto flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center">
+            <img src="./logo.png" alt="Ann Doctors Mattresses Logo" class="h-20 w-auto transition-transform duration-300" />
+        </div>
+        <div class="hidden md:flex space-x-6 transition-opacity duration-300">
+            <span class="text-gray-500 italic hover:text-gray-700 transition-colors duration-300">Coming Soon</span>
+        </div>
+    </header>
+
+    <section class="hero-bg text-white py-20 md:py-32 transition-all duration-500">
+        <div class="container mx-auto px-4 text-left">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 transition-all duration-300 hover:text-blue-200">Prescription for a Better Sleep</h2>
+
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transform hover:scale-105 transition-all duration-300">
+                SHOP NOW
+            </button>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-12 transition-all duration-500">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 transition-all duration-300 hover:bg-white hover:shadow-lg rounded-lg">
+                <i class="fas fa-heart text-blue-600 text-4xl mb-4 transition-all duration-300 hover:text-red-500"></i>
+                <h3 class="text-xl font-bold mb-2 transition-colors duration-300 hover:text-blue-600">High Quality Materials</h3>
+                <p class="text-gray-600 transition-colors duration-300 hover:text-gray-800">Often made from memory foam, latex, or advanced orthopedic-grade materials.</p>
+            </div>
+            <div class="p-6 transition-all duration-300 hover:bg-white hover:shadow-lg rounded-lg">
+                <i class="fas fa-moon text-blue-600 text-4xl mb-4 transition-all duration-300 hover:text-yellow-400"></i>
+                <h3 class="text-xl font-bold mb-2 transition-colors duration-300 hover:text-blue-600">Health Benefits</h3>
+                <p class="text-gray-600 transition-colors duration-300 hover:text-gray-800">Promotes overall well-being by ensuring proper rest.</p>
+            </div>
+            <div class="p-6 transition-all duration-300 hover:bg-white hover:shadow-lg rounded-lg">
+                <i class="fas fa-shield-alt text-blue-600 text-4xl mb-4 transition-all duration-300 hover:text-green-500"></i>
+                <h3 class="text-xl font-bold mb-2 transition-colors duration-300 hover:text-blue-600">Enhanced Sleep Quality</h3>
+                <p class="text-gray-600 transition-colors duration-300 hover:text-gray-800">Minimizes motion transfer, allowing couples to sleep undisturbed. </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-50 py-16 transition-all duration-500">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 transition-colors duration-300 hover:text-blue-600">Ready to Transform Your Sleep?</h2>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transform hover:scale-105 transition-all duration-300">
+                GET YOUR MATTRESS
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 transition-all duration-500">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 flex flex-col items-center transition-all duration-300 hover:opacity-90">
+                    <img src="./logo.png" alt="Ann Doctors Mattresses Logo" class="h-12 w-auto mb-2 transition-transform duration-300 hover:scale-105" />
+                    <p class="text-gray-400 mt-2 transition-colors duration-300 hover:text-white">Comfort Your Dreams</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/people/Doctor-Mattresses/61567163511934/?mibextid=ZbWKwL"
+                        class="hover:text-blue-400 transform hover:scale-125 transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/doctor_mattresses?igsh=MWxtNG9xdml0c2dxcQ%3D%3D"
+                        class="hover:text-blue-400 transform hover:scale-125 transition-all duration-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm transition-colors duration-300 hover:text-white">
+                &copy; 2025 Ann Doctors Mattresses. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send/?phone=917034846777&text&type=phone_number&app_absent=0"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+</body>
+</html>

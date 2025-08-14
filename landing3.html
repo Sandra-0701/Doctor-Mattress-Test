@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ann Doctors Mattresses - Premium Sleep Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Base Styles */
+    body {
+      scroll-behavior: smooth;
+    }
+    
+    /* Hero Background with Parallax */
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511898634545-c01af8a54dd5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background-position 0.5s ease;
+    }
+    
+    /* Hover Effects */
+    .mattress-feature {
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-origin: center bottom;
+    }
+    .mattress-feature:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    /* Navigation */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    /* Dropdown Menus */
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) rotateX(0);
+    }
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-15px) rotateX(-15deg);
+      transform-origin: top center;
+      transition: all 0.3s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.2s ease;
+      perspective: 1000px;
+    }
+    .dropdown-menu a {
+      transition: all 0.2s ease;
+    }
+    .dropdown-menu a:hover {
+      transform: translateX(5px);
+    }
+    
+    /* Counter Animation */
+    .counter {
+      transition: all 1s ease-out;
+    }
+    
+    /* Product Cards */
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .product-card img {
+      transition: transform 0.8s ease, filter 0.4s ease;
+    }
+    .product-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.05);
+    }
+    
+    /* Testimonial Cards */
+    .testimonial-card {
+      transition: all 0.4s ease;
+      transform-style: preserve-3d;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px) rotateY(5deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .testimonial-card img {
+      transition: transform 0.5s ease;
+    }
+    .testimonial-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Buttons */
+    .btn-hover {
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+    }
+    .btn-hover:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .btn-hover:active {
+      transform: translateY(1px);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse {
+      animation: pulse 3s ease infinite;
+    }
+    .wave {
+      display: inline-block;
+      animation: wave 1.5s ease infinite;
+    }
+    
+    /* Delays */
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    
+    /* Section Divider */
+    .section-divider {
+      height: 100px;
+      background: linear-gradient(to right bottom, #f8fafc 49%, #3b82f6 50%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+      transition: all 0.5s ease;
+    }
+    
+    /* Floating Icons */
+    .floating-icon {
+      position: absolute;
+      opacity: 0.1;
+      z-index: -1;
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 relative overflow-x-hidden">
+  <!-- Floating Background Elements -->
+  <div class="floating-icon text-blue-400 text-6xl top-20 left-10 delay-100">
+    <i class="fas fa-bed"></i>
+  </div>
+  <div class="floating-icon text-blue-300 text-4xl top-1/4 right-20 delay-300">
+    <i class="fas fa-moon"></i>
+  </div>
+  <div class="floating-icon text-blue-200 text-5xl bottom-1/3 left-1/4 delay-500">
+    <i class="fas fa-star"></i>
+  </div>
+  
+  <!-- Top Bar -->
+  <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white text-center py-2 text-sm flex justify-center items-center overflow-hidden">
+    <div class="marquee whitespace-nowrap">
+      <span class="inline-block animate-marquee">✨ Grand Opening Sale - 20% Off All Mattresses ✨ Free Shipping ✨ 100-Night Trial ✨ Doctor Recommended ✨</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="container mx-auto px-4 py-4 flex justify-between items-center sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 hover:shadow-md">
+    <div class="flex items-center">
+      <h1 class="text-2xl font-bold text-blue-800 transform transition duration-500 hover:scale-105">
+        <span class="text-blue-600 wave">Ann</span> Doctors Mattresses
+      </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8">
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Products <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 dropdown-arrow"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-56 bg-white shadow-xl rounded-lg mt-2 py-2 z-50 border border-gray-100">
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-bed mr-3 text-blue-400"></i> All Mattresses
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-bone mr-3 text-blue-400"></i> Orthopedic Series
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-layer-group mr-3 text-blue-400"></i> Memory Foam
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-cogs mr-3 text-blue-400"></i> Hybrid Mattresses
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-pillow mr-3 text-blue-400"></i> Pillows & Accessories
+          </a>
+        </div>
+      </div>
+      
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Technology <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 dropdown-arrow"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg mt-2 py-2 z-50 border border-gray-100">
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-microscope mr-3 text-blue-400"></i> Sleep Research
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-layer-group mr-3 text-blue-400"></i> 7-Layer System
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-temperature-low mr-3 text-blue-400"></i> Cooling Technology
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-user-md mr-3 text-blue-400"></i> Medical Advisory
+          </a>
+        </div>
+      </div>
+      
+      <a href="#" class="nav-link text-gray-700 hover:text-blue-600">Testimonials</a>
+      
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Resources <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 dropdown-arrow"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-56 bg-white shadow-xl rounded-lg mt-2 py-2 z-50 border border-gray-100">
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-book-open mr-3 text-blue-400"></i> Sleep Blog
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-map-signs mr-3 text-blue-400"></i> Buying Guide
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-calculator mr-3 text-blue-400"></i> Sleep Calculator
+          </a>
+          <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+            <i class="fas fa-question-circle mr-3 text-blue-400"></i> FAQ
+          </a>
+        </div>
+      </div>
+      
+      <a href="#" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-5">
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition-transform duration-300 hover:scale-110 relative group">
+        <i class="fas fa-search"></i>
+        <span class="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+      </a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition-transform duration-300 hover:scale-110 relative group">
+        <i class="fas fa-user"></i>
+        <span class="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+      </a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition-transform duration-300 hover:scale-110 relative">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center transform transition duration-300 hover:scale-110">3</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-32 md:py-48 flex items-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-blue-600/30 z-0"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-2xl">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in">
+          The <span class="text-blue-300">Science</span> of <br>
+          <span class="text-blue-400">Perfect Sleep</span>
+        </h2>
+        <p class="text-xl mb-8 delay-100 fade-in">
+          Medically engineered mattresses designed by sleep specialists to provide 
+          <span class="underline decoration-blue-400 decoration-wavy">optimal support</span> 
+          and comfort for your best night's sleep.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 delay-200 fade-in">
+          <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 btn-hover shadow-lg hover:shadow-xl">
+            SHOP MATTRESSES <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </button>
+          <button class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-4 px-8 border-2 border-white rounded-full transition-all duration-300 btn-hover shadow-lg hover:shadow-xl">
+            <i class="fas fa-play-circle mr-2"></i> WATCH VIDEO
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <div class="bg-white py-12 shadow-sm transform transition duration-500 hover:-translate-y-1">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div class="text-center fade-in delay-100 transform transition hover:scale-105">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="10000">0</div>
+          <div class="text-gray-600 mt-2">Happy Sleepers</div>
+          <div class="w-16 h-1 bg-blue-400 mx-auto mt-2 rounded-full transform transition duration-500 hover:scale-x-125"></div>
+        </div>
+        <div class="text-center fade-in delay-200 transform transition hover:scale-105">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="150">0</div>
+          <div class="text-gray-600 mt-2">Doctors Recommend</div>
+          <div class="w-16 h-1 bg-blue-400 mx-auto mt-2 rounded-full transform transition duration-500 hover:scale-x-125"></div>
+        </div>
+        <div class="text-center fade-in delay-300 transform transition hover:scale-105">
+          <div class="text-3xl font-bold text-blue-600">5<span class="text-yellow-400">★</span></div>
+          <div class="text-gray-600 mt-2">Average Rating</div>
+          <div class="w-16 h-1 bg-blue-400 mx-auto mt-2 rounded-full transform transition duration-500 hover:scale-x-125"></div>
+        </div>
+        <div class="text-center fade-in delay-400 transform transition hover:scale-105">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="100">0</div>
+          <div class="text-gray-600 mt-2">Night Trial</div>
+          <div class="w-16 h-1 bg-blue-400 mx-auto mt-2 rounded-full transform transition duration-500 hover:scale-x-125"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="container mx-auto px-4 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
+        Why Choose <span class="text-blue-600 underline decoration-wavy decoration-blue-400">Doctor's Mattresses</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">
+        Our mattresses are designed with medical-grade precision to address common sleep issues and provide optimal support.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-100">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform transition duration-500 hover:rotate-12">
+          <i class="fas fa-bone text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Orthopedic Support</h3>
+        <p class="text-gray-600 text-center">Advanced support system aligns your spine and relieves pressure points to prevent back pain and improve posture.</p>
+        <div class="mt-6 text-center">
+          <a href="#" class="text-blue-600 font-medium inline-flex items-center group">
+            Learn more 
+            <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-200">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform transition duration-500 hover:rotate-12">
+          <i class="fas fa-temperature-low text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Temperature Regulation</h3>
+        <p class="text-gray-600 text-center">Breathable, cooling materials maintain the ideal sleep temperature throughout the night for uninterrupted rest.</p>
+        <div class="mt-6 text-center">
+          <a href="#" class="text-blue-600 font-medium inline-flex items-center group">
+            Learn more 
+            <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-300">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform transition duration-500 hover:rotate-12">
+          <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Health Benefits</h3>
+        <p class="text-gray-600 text-center">Promotes better circulation, reduces stress on joints, and improves overall sleep quality for enhanced well-being.</p>
+        <div class="mt-6 text-center">
+          <a href="#" class="text-blue-600 font-medium inline-flex items-center group">
+            Learn more 
+            <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="bg-gradient-to-b from-gray-100 to-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent z-10"></div>
+    <div class="container mx-auto px-4 relative z-20">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
+          Our <span class="text-blue-600">Premium Collection</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">
+          Explore our range of doctor-approved mattresses designed for every sleep need.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-100">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" 
+                 alt="OrthoCare Mattress" 
+                 class="h-full w-full object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform transition duration-300 hover:scale-110">
+              BESTSELLER
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 font-bold px-3 py-1 rounded-full transform transition duration-300 hover:scale-105">
+              -20% OFF
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">OrthoCare Pro</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Medical Grade</span>
+            </div>
+            <p class="text-gray-600 mb-4">Advanced orthopedic support for chronic back pain sufferers.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹24,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹29,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition-all duration-300 transform hover:scale-105 flex items-center">
+                <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-200">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" 
+                 alt="MemoryFoam Elite" 
+                 class="h-full w-full object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full transform transition duration-300 hover:scale-110">
+              NEW
+            </div>
+            <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 font-bold px-3 py-1 rounded-full transform transition duration-300 hover:scale-105">
+              -15% OFF
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">MemoryFoam Elite</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Cooling Tech</span>
+            </div>
+            <p class="text-gray-600 mb-4">Premium memory foam that contours to your body perfectly.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹32,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹38,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition-all duration-300 transform hover:scale-105 flex items-center">
+                <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-300">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" 
+                 alt="Hybrid Luxe" 
+                 class="h-full w-full object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="absolute bottom-4 left-4 bg-white/90 text-blue-800 font-bold px-3 py-1 rounded-full transform transition duration-300 hover:scale-105">
+              -10% OFF
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">Hybrid Luxe</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Best of Both</span>
+            </div>
+            <p class="text-gray-600 mb-4">Combination of springs and foam for balanced support.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹28,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹34,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition-all duration-300 transform hover:scale-105 flex items-center">
+                <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12 fade-in delay-400">
+        <button class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 border-2 border-blue-600 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+          VIEW ALL PRODUCTS <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+        </button>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent z-10"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container mx-auto px-4 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
+        What Our <span class="text-blue-600">Customers Say</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">
+        Don't just take our word for it - hear from people who've transformed their sleep with our mattresses.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-100">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6 italic">"After years of back pain, my OrthoCare Pro mattress has been life-changing. I wake up refreshed and pain-free for the first time in a decade."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden transform transition duration-500 hover:rotate-6">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Riya Sharma" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Riya Sharma</h4>
+            <p class="text-gray-500 text-sm">Mumbai • 6 months ago</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-200">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6 italic">"The cooling technology in the MemoryFoam Elite is incredible. No more night sweats, and my sleep quality has improved dramatically."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden transform transition duration-500 hover:rotate-6">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Amit Patel</h4>
+            <p class="text-gray-500 text-sm">Bangalore • 3 months ago</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-300">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6 italic">"As a doctor, I recommend Ann Doctors Mattresses to my patients. The science behind their products is impressive and the results speak for themselves."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden transform transition duration-500 hover:rotate-6">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. Arjun Mehta" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Dr. Arjun Mehta</h4>
+            <p class="text-gray-500 text-sm">Delhi • Orthopedic Specialist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="bg-blue-50 py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-blue-50 z-10"></div>
+    <div class="container mx-auto px-4 relative z-20">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            The <span class="text-blue-600">Science</span> Behind Our Mattresses
+          </h2>
+          <p class="text-gray-600 mb-6">Our mattresses incorporate cutting-edge sleep technology developed in collaboration with medical professionals and sleep scientists.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start transform transition duration-300 hover:translate-x-2">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Pressure-relieving memory foam layers</span>
+            </li>
+            <li class="flex items-start transform transition duration-300 hover:translate-x-2 delay-100">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Medical-grade orthopedic support cores</span>
+            </li>
+            <li class="flex items-start transform transition duration-300 hover:translate-x-2 delay-200">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Breathable, hypoallergenic materials</span>
+            </li>
+            <li class="flex items-start transform transition duration-300 hover:translate-x-2 delay-300">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Motion isolation technology for couples</span>
+            </li>
+          </ul>
+          <button class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            LEARN ABOUT OUR TECHNOLOGY
+          </button>
+        </div>
+        <div class="md:w-1/2 fade-in delay-100">
+          <div class="bg-white p-6 rounded-xl shadow-lg transform transition duration-500 hover:-translate-y-2">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Mattress Technology" 
+                 class="w-full h-auto rounded-lg transition duration-700 ease-in-out hover:scale-105">
+            <div class="mt-4 text-center text-sm text-gray-500">
+              Our proprietary 7-layer sleep system provides optimal support and comfort
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-blue-50 z-10"></div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="floating-icon text-white text-6xl top-20 left-10 delay-100">
+          <i class="fas fa-bed"></i>
+        </div>
+        <div class="floating-icon text-white text-4xl top-1/4 right-20 delay-300">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="floating-icon text-white text-5xl bottom-1/3 left-1/4 delay-500">
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">
+        Ready to <span class="text-blue-200">Transform</span> Your Sleep?
+      </h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto fade-in delay-100">
+        Try our doctor-approved mattress risk-free for 100 nights with our satisfaction guarantee.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in delay-200">
+        <button class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          SHOP NOW <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+        </button>
+        <button class="bg-transparent hover:bg-blue-700 text-white font-bold py-4 px-8 border-2 border-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <i class="fas fa-phone-alt mr-2"></i> SPEAK TO A SLEEP EXPERT
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+      <div class="floating-icon text-blue-400 text-6xl top-20 left-10 delay-100">
+        <i class="fas fa-bed"></i>
+      </div>
+      <div class="floating-icon text-blue-300 text-4xl top-1/4 right-20 delay-300">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="fade-in">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-blue-400">Ann</span> Doctors Mattresses
+          </h3>
+          <p class="text-gray-400 mb-4">Sleep perfected by medicine. Doctor-approved mattresses for optimal health and rest.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/people/Doctor-Mattresses/61567163511934/?mibextid=ZbWKwL" 
+               class="text-gray-400 hover:text-blue-400 text-xl transition-transform duration-300 hover:scale-110">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/doctor_mattresses?igsh=MWxtNG9xdml0c2dxcQ%3D%3D" 
+               class="text-gray-400 hover:text-blue-400 text-xl transition-transform duration-300 hover:scale-110">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" 
+               class="text-gray-400 hover:text-blue-400 text-xl transition-transform duration-300 hover:scale-110">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" 
+               class="text-gray-400 hover:text-blue-400 text-xl transition-transform duration-300 hover:scale-110">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-100">
+          <h4 class="text-lg font-bold mb-4">Shop</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> All Mattresses
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Orthopedic Mattresses
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Memory Foam
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Hybrid Mattresses
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Pillows & Accessories
+            </a></li>
+          </ul>
+        </div>
+        
+        <div class="fade-in delay-200">
+          <h4 class="text-lg font-bold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Contact Us
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> FAQs
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Shipping & Returns
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Warranty
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Sleep Guide
+            </a></li>
+          </ul>
+        </div>
+        
+        <div class="fade-in delay-300">
+          <h4 class="text-lg font-bold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> About Us
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Our Technology
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Medical Advisory
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Blog
+            </a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+              <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Careers
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-gray-400 text-sm mb-4 md:mb-0 fade-in">
+            &copy; 2025 Ann Doctors Mattresses. All rights reserved.
+          </div>
+          <div class="flex space-x-6 fade-in delay-100">
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://api.whatsapp.com/send/?phone=917034846777&text&type=phone_number&app_absent=0" 
+     class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-110 z-50 btn-hover pulse">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+          class="fixed bottom-6 left-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 z-50 btn-hover hidden">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+        
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(animateCounters, 1);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      });
+    }
+    
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('counter')) {
+            animateCounters();
+          }
+          entry.target.classList.add('fade-in');
+          
+          // Add floating animation to elements when they come into view
+          if (entry.target.classList.contains('floating-icon')) {
+            entry.target.style.animationDelay = entry.target.classList.contains('delay-100') ? '0.1s' : 
+                                              entry.target.classList.contains('delay-300') ? '0.3s' : 
+                                              entry.target.classList.contains('delay-500') ? '0.5s' : '0s';
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Observe all elements with animations
+    document.querySelectorAll('.fade-in, .counter, .floating-icon').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Show/hide back to top button
+    window.addEventListener('scroll', function() {
+      const backToTopButton = document.querySelector('button[onclick*="scrollTo"]');
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+    
+    // Dropdown arrow animation
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-arrow').classList.add('rotate-180');
+      });
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-arrow').classList.remove('rotate-180');
+      });
+    });
+    
+    // Marquee animation for top bar
+    const marquee = document.querySelector('.marquee span');
+    if (marquee) {
+      marquee.style.animation = `marquee ${marquee.textContent.length / 10}s linear infinite`;
+    }
+  </script>
+</body>
+</html>

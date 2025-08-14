@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forgot & Reset Password | Doctor Mattress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+    <!-- Image Section -->
+    <div class="md:w-1/2 bg-gradient-to-br from-primary to-secondary p-8 text-white flex flex-col items-center justify-center">
+      <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+           alt="Comfortable Mattress" 
+           class="w-full h-48 md:h-64 object-cover rounded-lg mb-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-2">Doctor Mattress</h2>
+      <p class="text-center mb-6 opacity-90">Medical-grade sleep solutions for your health and comfort</p>
+      <div class="flex space-x-4">
+        <div class="bg-white bg-opacity-20 p-3 rounded-full">
+          <i class="fas fa-shield-alt text-xl"></i>
+        </div>
+        <div class="bg-white bg-opacity-20 p-3 rounded-full">
+          <i class="fas fa-lock text-xl"></i>
+        </div>
+        <div class="bg-white bg-opacity-20 p-3 rounded-full">
+          <i class="fas fa-user-md text-xl"></i>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Form Section -->
+    <div class="md:w-1/2 p-8">
+      <!-- Forgot Password Form -->
+      <div id="forgot-section">
+        <div class="flex justify-center mb-6">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-full text-primary">
+            <i class="fas fa-key text-2xl"></i>
+          </div>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">Forgot Password?</h2>
+        <p class="text-gray-600 mb-6 text-center">Enter your email to receive a secure reset link</p>
+        
+        <form id="forgot-form" class="space-y-4">
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-envelope text-gray-400"></i>
+            </div>
+            <input
+              type="email"
+              id="forgot-email"
+              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Your email address"
+              required
+            />
+          </div>
+          
+          <button
+            type="submit"
+            class="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-opacity-90 transition flex items-center justify-center"
+          >
+            <i class="fas fa-paper-plane mr-2"></i> Send Reset Link
+          </button>
+        </form>
+        
+        <div id="forgot-success" class="hidden mt-4 p-3 bg-green-50 text-green-700 rounded-lg text-center">
+          <i class="fas fa-check-circle mr-2"></i> If your email is registered, a reset link has been sent.
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button
+            id="show-reset"
+            class="text-primary hover:underline text-sm flex items-center justify-center mx-auto"
+            type="button"
+          >
+            <i class="fas fa-code mr-1"></i> Already have a reset code?
+          </button>
+        </div>
+        
+        <div class="mt-8 pt-4 border-t border-gray-200 text-center">
+          <a href="#" class="text-gray-600 hover:text-primary text-sm">
+            <i class="fas fa-arrow-left mr-1"></i> Back to login
+          </a>
+        </div>
+      </div>
+
+      <!-- Reset Password Form -->
+      <div id="reset-section" class="hidden">
+        <div class="flex justify-center mb-6">
+          <div class="bg-primary bg-opacity-10 p-3 rounded-full text-primary">
+            <i class="fas fa-lock-open text-2xl"></i>
+          </div>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">Reset Password</h2>
+        <p class="text-gray-600 mb-6 text-center">Create a new secure password for your account</p>
+        
+        <form id="reset-form" class="space-y-4">
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-key text-gray-400"></i>
+            </div>
+            <input
+              type="text"
+              id="reset-code"
+              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Reset code"
+              required
+            />
+          </div>
+          
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-lock text-gray-400"></i>
+            </div>
+            <input
+              type="password"
+              id="reset-password"
+              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="New password"
+              required
+            />
+          </div>
+          
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-lock text-gray-400"></i>
+            </div>
+            <input
+              type="password"
+              id="reset-confirm"
+              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Confirm new password"
+              required
+            />
+          </div>
+          
+          <button
+            type="submit"
+            class="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-opacity-90 transition flex items-center justify-center"
+          >
+            <i class="fas fa-sync-alt mr-2"></i> Reset Password
+          </button>
+        </form>
+        
+        <div id="reset-success" class="hidden mt-4 p-3 bg-green-50 text-green-700 rounded-lg text-center">
+          <i class="fas fa-check-circle mr-2"></i> Your password has been reset successfully!
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button
+            id="show-forgot"
+            class="text-primary hover:underline text-sm flex items-center justify-center mx-auto"
+            type="button"
+          >
+            <i class="fas fa-arrow-left mr-1"></i> Back to Forgot Password
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle between forgot and reset sections
+    document.getElementById('show-reset').onclick = function() {
+      document.getElementById('forgot-section').classList.add('hidden');
+      document.getElementById('reset-section').classList.remove('hidden');
+    };
+    document.getElementById('show-forgot').onclick = function() {
+      document.getElementById('reset-section').classList.add('hidden');
+      document.getElementById('forgot-section').classList.remove('hidden');
+    };
+
+    // Simulate forgot password submit
+    document.getElementById('forgot-form').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('forgot-success').classList.remove('hidden');
+    };
+
+    // Simulate reset password submit
+    document.getElementById('reset-form').onsubmit = function(e) {
+      e.preventDefault();
+      const pass = document.getElementById('reset-password').value;
+      const confirm = document.getElementById('reset-confirm').value;
+      if (pass !== confirm) {
+        alert('Passwords do not match!');
+        return;
+      }
+      document.getElementById('reset-success').classList.remove('hidden');
+    };
+  </script>
+  
+  <style>
+    .bg-primary { background-color: #D61261; }
+    .text-primary { color: #D61261; }
+    .focus\:ring-primary:focus { --tw-ring-color: #D61261; }
+    .hover\:bg-opacity-90:hover { opacity: 0.9; }
+  </style>
+</body>
+</html>

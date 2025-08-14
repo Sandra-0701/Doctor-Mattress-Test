@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ann Doctor Mattress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+          sans: ['Roboto', 'ui-sans-serif', 'system-ui'], // Roboto as primary font
+        },
+                    colors: {
+                        primary: '#D61261',
+                        secondary: '#2688D8',
+                        accent: '#7A7A7A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">
+                    <span class="text-secondary">Ann Doctor</span> Mattress
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Products</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">About</a>
+                    <a href="#" class="text-primary font-medium">Contact</a>
+                </nav>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Contact Us</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">We'd love to hear from you! Reach out to us for inquiries, support, or just to say hello.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div class="bg-white rounded-xl shadow-md p-8 lg:p-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8">Get in Touch</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Our Address</h3>
+                            <p class="text-gray-600">123 Sleepy Lane, Suite 456<br>Dream City, DC 78910</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Phone Number</h3>
+                            <p class="text-gray-600">+1 (555) 123-4567<br>+1 (555) 765-4321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Email Address</h3>
+                            <p class="text-gray-600">info@anndoctormattress.com<br>support@anndoctormattress.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Business Hours</h3>
+                            <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form and Map -->
+            <div class="space-y-8">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-lg transition">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Map -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.98784492426425!3d40.74844097138996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-xl">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="text-primary">Ann Doctor</span> <span class="text-secondary">Mattress</span>
+                    </h3>
+                    <p class="text-gray-400">Quality sleep solutions for your comfort and health. We provide the best mattresses for your perfect night's sleep.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Memory Foam</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Spring Mattresses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Hybrid Mattresses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pillows</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-gray-800">
+                        <button type="submit" class="bg-primary hover:bg-opacity-90 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Ann Doctor Mattress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

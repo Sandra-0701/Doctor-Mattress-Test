@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Mattress - Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="max-w-4xl mx-auto mt-10 bg-white rounded-lg shadow p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Your Cart</h1>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                    <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Product</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Details</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Price</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Quantity</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Total</th>
+                        <th class="px-4 py-3"></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body" class="bg-white divide-y divide-gray-100">
+                    <tr>
+                        <td class="flex items-center gap-3 px-4 py-4">
+                            <img src="https://via.placeholder.com/80x60?text=Mattress" alt="Mattress" class="w-20 h-14 rounded object-cover border">
+                            <span class="font-medium text-gray-700">Orthopedic Mattress</span>
+                        </td>
+                        <td class="px-4 py-4 text-gray-600 text-sm">
+                            <div>Size: Queen (78"x60")</div>
+                            <div>Thickness: 8"</div>
+                            <div>Warranty: 10 Years</div>
+                            <div>Firmness: Medium-Firm</div>
+                        </td>
+                        <td class="px-4 py-4 text-gray-700">₹12,000</td>
+                        <td class="px-4 py-4">
+                            <input type="number" class="qty-input w-16 border rounded px-2 py-1 text-center focus:outline-none focus:ring-2 focus:ring-blue-400" value="1" min="1">
+                        </td>
+                        <td class="px-4 py-4 text-gray-700 total-cell">₹12,000</td>
+                        <td class="px-4 py-4">
+                            <button class="remove-btn text-red-500 hover:text-red-700 text-xl" title="Remove item">&times;</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="flex items-center gap-3 px-4 py-4">
+                            <img src="https://via.placeholder.com/80x60?text=Pillow" alt="Pillow" class="w-20 h-14 rounded object-cover border">
+                            <span class="font-medium text-gray-700">Memory Foam Pillow</span>
+                        </td>
+                        <td class="px-4 py-4 text-gray-600 text-sm">
+                            <div>Size: Standard</div>
+                            <div>Material: Memory Foam</div>
+                            <div>Warranty: 2 Years</div>
+                        </td>
+                        <td class="px-4 py-4 text-gray-700">₹1,500</td>
+                        <td class="px-4 py-4">
+                            <input type="number" class="qty-input w-16 border rounded px-2 py-1 text-center focus:outline-none focus:ring-2 focus:ring-blue-400" value="2" min="1">
+                        </td>
+                        <td class="px-4 py-4 text-gray-700 total-cell">₹3,000</td>
+                        <td class="px-4 py-4">
+                            <button class="remove-btn text-red-500 hover:text-red-700 text-xl" title="Remove item">&times;</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex flex-col md:flex-row md:justify-between items-end mt-10 gap-6">
+            <div class="w-full md:w-1/2 bg-gray-50 rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-gray-700">Order Summary</h2>
+                <div class="flex justify-between py-2 text-gray-600">
+                    <span>Subtotal</span>
+                    <span id="subtotal" class="font-medium text-gray-800">₹15,000</span>
+                </div>
+                <div class="flex justify-between py-2 text-gray-600">
+                    <span>Shipping</span>
+                    <span id="shipping" class="font-medium text-gray-800">₹500</span>
+                </div>
+                <div class="flex justify-between py-2 text-gray-600">
+                    <span>GST (18%)</span>
+                    <span id="gst" class="font-medium text-gray-800">₹2,700</span>
+                </div>
+                <div class="border-t my-4"></div>
+                <div class="flex justify-between py-2 text-lg font-bold text-gray-800">
+                    <span>Total</span>
+                    <span id="grand-total">₹18,200</span>
+                </div>
+            </div>
+            <button class="checkout-btn bg-green-500 hover:bg-green-600 text-white font-semibold px-10 py-4 rounded shadow transition w-full md:w-auto">Proceed to Checkout</button>
+        </div>
+    </div>
+    <script>
+        // Cart logic for detailed cart
+        function parsePrice(str) {
+            return parseInt(str.replace(/[^\d]/g, ''), 10) || 0;
+        }
+        function formatPrice(num) {
+            return '₹' + num.toLocaleString();
+        }
+        function updateCart() {
+            const rows = document.querySelectorAll('#cart-body tr');
+            let subtotal = 0;
+            rows.forEach(row => {
+                const price = parsePrice(row.children[2].textContent);
+                const qtyInput = row.querySelector('.qty-input');
+                let qty = parseInt(qtyInput.value, 10);
+                if (isNaN(qty) || qty < 1) qty = 1;
+                qtyInput.value = qty;
+                const total = price * qty;
+                row.querySelector('.total-cell').textContent = formatPrice(total);
+                subtotal += total;
+            });
+            document.getElementById('subtotal').textContent = formatPrice(subtotal);
+
+            // Shipping: ₹500 if subtotal > 0, else 0
+            const shipping = subtotal > 0 ? 500 : 0;
+            document.getElementById('shipping').textContent = formatPrice(shipping);
+
+            // GST: 18% of subtotal
+            const gst = Math.round(subtotal * 0.18);
+            document.getElementById('gst').textContent = formatPrice(gst);
+
+            // Grand total
+            const grandTotal = subtotal + shipping + gst;
+            document.getElementById('grand-total').textContent = formatPrice(grandTotal);
+        }
+        document.querySelectorAll('.qty-input').forEach(input => {
+            input.addEventListener('change', updateCart);
+        });
+        document.querySelectorAll('.remove-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('tr').remove();
+                updateCart();
+            });
+        });
+        updateCart();
+    </script>
+</body>
+</html>

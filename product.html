@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flo Mattress - Ergo™</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="text-2xl font-bold text-blue-600">Flo</div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Mattresses</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Sleep Accessories</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Support</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-search text-gray-400"></i>
+                <i class="fas fa-shopping-cart text-gray-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Product Images -->
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img id="mainImage" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="The Flo Mattress" class="w-full h-96 object-cover">
+                </div>
+                <div class="flex space-x-2">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=80&fit=crop" alt="Mattress view 1" class="w-20 h-16 object-cover rounded cursor-pointer border-2 border-blue-500 thumbnail" onclick="changeImage(this.src)">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=100&h=80&fit=crop" alt="Mattress view 2" class="w-20 h-16 object-cover rounded cursor-pointer border-2 border-gray-200 thumbnail" onclick="changeImage(this.src)">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=100&h=80&fit=crop" alt="Mattress view 3" class="w-20 h-16 object-cover rounded cursor-pointer border-2 border-gray-200 thumbnail" onclick="changeImage(this.src)">
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="space-y-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">The Flo Mattress</h1>
+                    <p class="text-blue-600 text-lg font-semibold mt-1">Ergo™</p>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center mt-3">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">(3,743)</span>
+                    </div>
+                    
+                    <p class="text-gray-600 mt-4">For those who prefer better ergonomic support.</p>
+                </div>
+
+                <!-- Financing Info -->
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-700">Looking for hassle orthopedic support? <a href="#" class="text-blue-600">Switch to Classic®</a></p>
+                </div>
+
+                <!-- Price -->
+                <div class="border-t pt-6">
+                    <div class="flex items-baseline">
+                        <span class="text-sm text-gray-500">Offer Price:</span>
+                        <span class="text-3xl font-bold text-gray-900 ml-2">Rs. 5,599</span>
+                        <span class="text-gray-500 line-through ml-2">Rs. 8,999</span>
+                    </div>
+                    <p class="text-sm text-green-600 mt-1">EMI from Rs. 467/month | 0% for 12 months</p>
+                    <p class="text-xs text-gray-500 mt-1">You Save Rs. 3,400 (38%)</p>
+                    <p class="text-xs text-gray-500">Inclusive Taxes: Rs. 122</p>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="bg-blue-600 text-white p-4 rounded-lg">
+                    <p class="font-semibold">Complete your purchase by Sunday, 4 Aug 2024 to avail:</p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-2xl font-bold">8% EMI</span>
+                        <span class="text-lg ml-2">/ month + 31,419 EMI on 1st Month</span>
+                    </div>
+                </div>
+
+                <!-- Size Selection -->
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Step 1: Choose your Size</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="size-btn px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white rounded-lg font-medium" data-size="SINGLE">SINGLE</button>
+                            <button class="size-btn px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-blue-500" data-size="DOUBLE">DOUBLE</button>
+                            <button class="size-btn px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-blue-500" data-size="QUEEN">QUEEN</button>
+                            <button class="size-btn px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-blue-500" data-size="KING">KING</button>
+                        </div>
+                        <div class="mt-2">
+                            <span class="text-blue-600 cursor-pointer text-sm">CUSTOM SIZE</span>
+                            <span class="text-gray-500 text-sm ml-2">See size chart</span>
+                        </div>
+                    </div>
+
+                    <!-- Measurements -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Step 2: Unit of Measurement</h3>
+                        <select class="border border-gray-300 rounded-lg px-3 py-2 w-full max-w-xs">
+                            <option>Inches</option>
+                            <option>Centimeters</option>
+                        </select>
+                    </div>
+
+                    <!-- Length & Width -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Step 3: Length & Width</h3>
+                        <select class="border border-gray-300 rounded-lg px-3 py-2 w-full max-w-xs">
+                            <option>72 inch x 30 inch</option>
+                            <option>72 inch x 36 inch</option>
+                            <option>78 inch x 60 inch</option>
+                            <option>78 inch x 72 inch</option>
+                        </select>
+                    </div>
+
+                    <!-- Thickness -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Step 4: Mattress Thickness</h3>
+                        <select class="border border-gray-300 rounded-lg px-3 py-2 w-full max-w-xs">
+                            <option>6 inch</option>
+                            <option>8 inch</option>
+                            <option>10 inch</option>
+                        </select>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Step 5: Quantity</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="changeQuantity(-1)">-</button>
+                            <span id="quantity" class="px-4 py-2 border border-gray-300 rounded">1</span>
+                            <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add to Cart -->
+                <button class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors" onclick="addToCart()">
+                    ADD TO CART
+                </button>
+
+                <!-- Additional Info -->
+                <div class="space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-truck mr-2"></i>Hassle-free Delivery</p>
+                    <p><i class="fas fa-shield-alt mr-2"></i>For delivery within 7-10 business days</p>
+                    <p><i class="fas fa-headset mr-2"></i>24x7 Customer Support</p>
+                </div>
+
+                <!-- Charged Mattress -->
+                <div class="mt-6">
+                    <p class="text-sm text-gray-700">Looking for a custom charged mattress?</p>
+                    <a href="#" class="text-blue-600 text-sm">WhatsApp us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="mt-12">
+            <div class="border-b">
+                <nav class="flex space-x-8">
+                    <button class="tab-btn py-2 px-1 border-b-2 border-blue-500 text-blue-600 font-medium" data-tab="description">Description</button>
+                    <button class="tab-btn py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="details">Details</button>
+                    <button class="tab-btn py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="reviews">Reviews</button>
+                    <button class="tab-btn py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700" data-tab="support">Support</button>
+                </nav>
+            </div>
+            
+            <div class="mt-6">
+                <div id="description" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-700 leading-relaxed">Experience the perfect blend of comfort and support with The Flo Mattress Ergo™. This is a premium foam mattress designed to provide optimal spinal alignment and pressure relief for a restful night's sleep.</p>
+                            <p class="text-gray-700 leading-relaxed mt-4">Built with advanced materials and innovative design, this mattress adapts to your body contours while providing the support you need for deep, rejuvenating sleep.</p>
+                        </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1631049035182-249067d7618e?w=400&h=300&fit=crop" alt="Mattress comfort" class="w-full h-64 object-cover rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="details" class="tab-content hidden">
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Product Specifications</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Premium foam construction</li>
+                            <li>• Ergonomic support system</li>
+                            <li>• Temperature-regulating fabric</li>
+                            <li>• Available in multiple sizes</li>
+                            <li>• 10-year warranty</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="reviews" class="tab-content hidden">
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Customer Reviews</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 font-medium">Excellent mattress!</span>
+                            </div>
+                            <p class="text-gray-700">"Great comfort and support. Worth every penny!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="support" class="tab-content hidden">
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Support & Warranty</h3>
+                        <p class="text-gray-700">We offer comprehensive support for your mattress purchase including delivery, setup, and warranty coverage.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Free delivery and setup</li>
+                            <li>• 100-night trial period</li>
+                            <li>• 10-year warranty</li>
+                            <li>• 24/7 customer support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuantity = 1;
+        let selectedSize = 'SINGLE';
+
+        // Change main product image
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src.replace('w=100&h=80', 'w=600&h=400');
+            
+            // Update thumbnail borders
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('border-blue-500');
+                thumb.classList.add('border-gray-200');
+            });
+            event.target.classList.remove('border-gray-200');
+            event.target.classList.add('border-blue-500');
+        }
+
+        // Handle size selection
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active state from all buttons
+                document.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('bg-blue-500', 'text-white', 'border-blue-500');
+                    b.classList.add('border-gray-300', 'text-gray-700');
+                });
+                
+                // Add active state to clicked button
+                this.classList.remove('border-gray-300', 'text-gray-700');
+                this.classList.add('bg-blue-500', 'text-white', 'border-blue-500');
+                
+                selectedSize = this.dataset.size;
+                updatePrice();
+            });
+        });
+
+        // Handle quantity changes
+        function changeQuantity(change) {
+            currentQuantity = Math.max(1, currentQuantity + change);
+            document.getElementById('quantity').textContent = currentQuantity;
+            updatePrice();
+        }
+
+        // Update price based on selection
+        function updatePrice() {
+            const basePrices = {
+                'SINGLE': 5599,
+                'DOUBLE': 7999,
+                'QUEEN': 9999,
+                'KING': 12999
+            };
+            
+            const newPrice = basePrices[selectedSize] * currentQuantity;
+            const originalPrice = Math.floor(newPrice * 1.6);
+            
+            document.querySelector('.text-3xl.font-bold.text-gray-900').textContent = `Rs. ${newPrice.toLocaleString()}`;
+            document.querySelector('.line-through').textContent = `Rs. ${originalPrice.toLocaleString()}`;
+        }
+
+        // Handle tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Remove active state from all tabs
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('border-blue-500', 'text-blue-600');
+                    b.classList.add('border-transparent', 'text-gray-500');
+                });
+                
+                // Add active state to clicked tab
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-blue-500', 'text-blue-600');
+                
+                // Hide all tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show target tab content
+                document.getElementById(targetTab).classList.remove('hidden');
+            });
+        });
+
+        // Add to cart functionality
+        function addToCart() {
+            const cartData = {
+                product: 'The Flo Mattress Ergo™',
+                size: selectedSize,
+                quantity: currentQuantity,
+                price: document.querySelector('.text-3xl.font-bold.text-gray-900').textContent
+            };
+            
+            // Simulate adding to cart
+            alert(`Added to cart:\n${cartData.product}\nSize: ${cartData.size}\nQuantity: ${cartData.quantity}\nPrice: ${cartData.price}`);
+            
+            // Add subtle animation to button
+            const btn = event.target;
+            btn.classList.add('bg-green-600');
+            btn.textContent = 'ADDED TO CART!';
+            
+            setTimeout(() => {
+                btn.classList.remove('bg-green-600');
+                btn.classList.add('bg-blue-600');
+                btn.textContent = 'ADD TO CART';
+            }, 2000);
+        }
+
+        // Add some interactive animations
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-1px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

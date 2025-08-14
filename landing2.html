@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ann Doctors Mattresses - Premium Sleep Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1511898634545-c01af8a54dd5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .mattress-feature {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .mattress-feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    .counter {
+      transition: all 1s ease-out;
+    }
+    .product-card {
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: scale(1.02);
+    }
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 15px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50">
+  <!-- Top Bar -->
+  <div class="bg-blue-900 text-white text-center py-2 text-sm flex justify-center items-center">
+    <span class="animate-pulse mr-2">•</span> 
+    <span>Grand Opening Sale - 20% Off All Mattresses</span>
+    <span class="animate-pulse ml-2">•</span>
+  </div>
+
+  <!-- Header -->
+  <header class="container mx-auto px-4 py-4 flex justify-between items-center sticky top-0 bg-white shadow-sm z-50">
+    <div class="flex items-center">
+      <h1 class="text-2xl font-bold text-blue-800">
+        <span class="text-blue-600">Ann</span> Doctors Mattresses
+      </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8">
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Products <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-48 bg-white shadow-lg rounded-md mt-2 py-2 z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">All Mattresses</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Orthopedic Series</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Memory Foam</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Hybrid Mattresses</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Pillows & Accessories</a>
+        </div>
+      </div>
+      
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Technology <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-56 bg-white shadow-lg rounded-md mt-2 py-2 z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">7-Layer Sleep System</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Pressure Relief Technology</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Temperature Regulation</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Medical Advisory Board</a>
+        </div>
+      </div>
+      
+      <a href="#" class="nav-link text-gray-700 hover:text-blue-600">Testimonials</a>
+      
+      <div class="dropdown relative">
+        <a href="#" class="nav-link text-gray-700 hover:text-blue-600 flex items-center">
+          Resources <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="dropdown-menu absolute top-full left-0 w-48 bg-white shadow-lg rounded-md mt-2 py-2 z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Sleep Blog</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Buying Guide</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Sleep Calculator</a>
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">FAQ</a>
+        </div>
+      </div>
+      
+      <a href="#" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition"><i class="fas fa-search"></i></a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition"><i class="fas fa-user"></i></a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 transition relative">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-32 md:py-48 flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl fade-in">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Science of <span class="text-blue-400">Perfect Sleep</span></h2>
+        <p class="text-xl mb-8 delay-100 fade-in">Medically engineered mattresses designed by sleep specialists to provide optimal support and comfort for your best night's sleep.</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 delay-200 fade-in">
+          <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 btn-hover">
+            SHOP MATTRESSES <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+          <button class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-4 px-8 border-2 border-white rounded-full transition duration-300 btn-hover">
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <div class="bg-white py-12 shadow-sm">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div class="text-center fade-in delay-100">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="10000">0</div>
+          <div class="text-gray-600">Happy Sleepers</div>
+        </div>
+        <div class="text-center fade-in delay-200">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="150">0</div>
+          <div class="text-gray-600">Doctors Recommend</div>
+        </div>
+        <div class="text-center fade-in delay-300">
+          <div class="text-3xl font-bold text-blue-600">5<span class="text-yellow-400">★</span></div>
+          <div class="text-gray-600">Average Rating</div>
+        </div>
+        <div class="text-center fade-in delay-400">
+          <div class="text-3xl font-bold text-blue-600 counter" data-target="100">0</div>
+          <div class="text-gray-600">Night Trial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="container mx-auto px-4 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Why Choose <span class="text-blue-600">Doctor's Mattresses</span></h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">Our mattresses are designed with medical-grade precision to address common sleep issues and provide optimal support.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-100">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i class="fas fa-bone text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Orthopedic Support</h3>
+        <p class="text-gray-600 text-center">Advanced support system aligns your spine and relieves pressure points to prevent back pain and improve posture.</p>
+      </div>
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-200">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i class="fas fa-temperature-low text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Temperature Regulation</h3>
+        <p class="text-gray-600 text-center">Breathable, cooling materials maintain the ideal sleep temperature throughout the night for uninterrupted rest.</p>
+      </div>
+      <div class="mattress-feature bg-white p-8 rounded-xl shadow-md fade-in delay-300">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-center">Health Benefits</h3>
+        <p class="text-gray-600 text-center">Promotes better circulation, reduces stress on joints, and improves overall sleep quality for enhanced well-being.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="bg-gray-100 py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Our <span class="text-blue-600">Premium Collection</span></h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">Explore our range of doctor-approved mattresses designed for every sleep need.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-100">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" alt="OrthoCare Mattress" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">BESTSELLER</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">OrthoCare Pro</h3>
+            <p class="text-gray-600 mb-4">Advanced orthopedic support for chronic back pain sufferers.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹24,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹29,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition btn-hover">View Details</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-200">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" alt="MemoryFoam Elite" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+            <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">MemoryFoam Elite</h3>
+            <p class="text-gray-600 mb-4">Premium memory foam that contours to your body perfectly.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹32,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹38,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition btn-hover">View Details</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg fade-in delay-300">
+          <div class="h-64 bg-blue-50 flex items-center justify-center relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" alt="Hybrid Luxe" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Hybrid Luxe</h3>
+            <p class="text-gray-600 mb-4">Combination of springs and foam for balanced support.</p>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-blue-600 font-bold text-lg">₹28,999</span>
+                <span class="text-gray-400 text-sm line-through ml-2">₹34,999</span>
+              </div>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm transition btn-hover">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12 fade-in delay-400">
+        <button class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 border-2 border-blue-600 rounded-full transition duration-300 btn-hover">
+          VIEW ALL PRODUCTS <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container mx-auto px-4 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">What Our <span class="text-blue-600">Customers Say</span></h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto fade-in delay-100">Don't just take our word for it - hear from people who've transformed their sleep with our mattresses.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-100">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6">"After years of back pain, my OrthoCare Pro mattress has been life-changing. I wake up refreshed and pain-free for the first time in a decade."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Riya Sharma" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Riya Sharma</h4>
+            <p class="text-gray-500 text-sm">Mumbai • 6 months ago</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-200">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6">"The cooling technology in the MemoryFoam Elite is incredible. No more night sweats, and my sleep quality has improved dramatically."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Amit Patel</h4>
+            <p class="text-gray-500 text-sm">Bangalore • 3 months ago</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card bg-white p-8 rounded-xl shadow-md fade-in delay-300">
+        <div class="flex mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-gray-600 mb-6">"As a doctor, I recommend Ann Doctors Mattresses to my patients. The science behind their products is impressive and the results speak for themselves."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. Arjun Mehta" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h4 class="font-bold">Dr. Arjun Mehta</h4>
+            <p class="text-gray-500 text-sm">Delhi • Orthopedic Specialist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="bg-blue-50 py-20">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">The <span class="text-blue-600">Science</span> Behind Our Mattresses</h2>
+          <p class="text-gray-600 mb-6">Our mattresses incorporate cutting-edge sleep technology developed in collaboration with medical professionals and sleep scientists.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Pressure-relieving memory foam layers</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Medical-grade orthopedic support cores</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Breathable, hypoallergenic materials</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+              <span class="text-gray-700">Motion isolation technology for couples</span>
+            </li>
+          </ul>
+          <button class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover">
+            LEARN ABOUT OUR TECHNOLOGY
+          </button>
+        </div>
+        <div class="md:w-1/2 fade-in delay-100">
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mattress Technology" class="w-full h-auto rounded-lg transition duration-500 hover:scale-105">
+            <div class="mt-4 text-center text-sm text-gray-500">Our proprietary 7-layer sleep system provides optimal support and comfort</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-blue-800 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Ready to Transform Your Sleep?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto fade-in delay-100">Try our doctor-approved mattress risk-free for 100 nights with our satisfaction guarantee.</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in delay-200">
+        <button class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 btn-hover">
+          SHOP NOW <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+        <button class="bg-transparent hover:bg-blue-700 text-white font-bold py-4 px-8 border-2 border-white rounded-full transition duration-300 btn-hover">
+          SPEAK TO A SLEEP EXPERT
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="fade-in">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-blue-400">Ann</span> Doctors Mattresses
+          </h3>
+          <p class="text-gray-400 mb-4">Sleep perfected by medicine. Doctor-approved mattresses for optimal health and rest.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/people/Doctor-Mattresses/61567163511934/?mibextid=ZbWKwL" class="text-gray-400 hover:text-blue-400 text-xl transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/doctor_mattresses?igsh=MWxtNG9xdml0c2dxcQ%3D%3D" class="text-gray-400 hover:text-blue-400 text-xl transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-100">
+          <h4 class="text-lg font-bold mb-4">Shop</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">All Mattresses</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Orthopedic Mattresses</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Memory Foam</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Hybrid Mattresses</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Pillows & Accessories</a></li>
+          </ul>
+        </div>
+        
+        <div class="fade-in delay-200">
+          <h4 class="text-lg font-bold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Shipping & Returns</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Warranty</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Sleep Guide</a></li>
+          </ul>
+        </div>
+        
+        <div class="fade-in delay-300">
+          <h4 class="text-lg font-bold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Our Technology</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Medical Advisory Board</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-gray-400 text-sm mb-4 md:mb-0 fade-in">
+            &copy; 2025 Ann Doctors Mattresses. All rights reserved.
+          </div>
+          <div class="flex space-x-6 fade-in delay-100">
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://api.whatsapp.com/send/?phone=917034846777&text&type=phone_number&app_absent=0" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 btn-hover">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Mobile Menu Button (hidden on larger screens) -->
+  <button class="md:hidden fixed bottom-6 left-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-50 btn-hover">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <script>
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+        
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(animateCounters, 1);
+        } else {
+          counter.innerText = target;
+        }
+      });
+    }
+    
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('counter')) {
+            animateCounters();
+          }
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.fade-in, .counter').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

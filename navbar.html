@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Mattresses - Ortho Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#4A90E2',
+                        'brand-pink': '#E91E63',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Blue Banner -->
+    <div class="bg-brand-blue text-white py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between text-sm">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z"/>
+                    </svg>
+                    Get 30 Nights Free Trial on selected mattresses
+                </span>
+            </div>
+            <div class="flex items-center space-x-4 mt-1 sm:mt-0">
+                <a href="#" class="hover:underline flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                    </svg>
+                    Franchise Enquiry
+                </a>
+                <a href="#" class="hover:underline flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Warranty Registration
+                </a>
+                <a href="#" class="hover:underline flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"/>
+                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
+                    </svg>
+                    Store Locator
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-8 h-8 bg-brand-pink rounded mr-2 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-brand-pink font-bold text-lg">Doctor</span>
+                            <span class="text-brand-pink text-sm -mt-1">Mattresses</span>
+                        </div>
+                        <div class="ml-4 flex flex-col">
+                            <span class="text-brand-blue font-bold text-lg">ORTHO</span>
+                            <span class="text-brand-blue text-sm -mt-1">CARE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8 hidden md:block">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text" placeholder="What are you looking for?" class="block w-full pl-10 pr-3 py-2 border-l-4 border-l-red-500 border rounded-full focus:ring-brand-blue focus:border-brand-blue">
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden lg:flex space-x-8">
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-brand-blue">
+                            Mattress
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-brand-blue">
+                            Beds
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-brand-blue">
+                            Combos
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-brand-blue">
+                            Pillows
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="#" class="text-red-600 hover:text-red-700 font-medium">Offers</a>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-brand-blue">
+                            Experience
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- Right Side Icons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Icon (Mobile) -->
+                    <button class="md:hidden p-2 text-gray-600 hover:text-brand-blue">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Cart -->
+                    <button class="relative p-2 text-gray-600 hover:text-brand-blue">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293A1 1 0 004 16h2m1 0v6a1 1 0 001 1h2a1 1 0 001-1v-6m-4 0h4"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+
+                    <!-- User Account -->
+                    <button class="p-2 text-gray-600 hover:text-brand-blue">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-gray-600 hover:text-brand-blue" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-200 mt-4">
+                    <!-- Mobile Search -->
+                    <div class="mb-4">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                            </div>
+                            <input type="text" placeholder="What are you looking for?" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-brand-blue focus:border-brand-blue">
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Mattress</a>
+                    <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Beds</a>
+                    <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Combos</a>
+                    <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Pillows</a>
+                    <a href="#" class="block px-3 py-2 text-red-600 hover:bg-gray-50 font-medium">Offers</a>
+                    <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Experience</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

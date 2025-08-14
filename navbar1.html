@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Mattresses Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .group:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .dropdown-item {
+      transition: all 0.2s ease;
+    }
+    
+    .dropdown-item:hover {
+      background-color: #f3f4f6;
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+  <header class="container mx-auto px-4 py-4 flex justify-between items-center sticky top-0 bg-white shadow-sm z-50">
+    <div class="flex items-center">
+      <h1 class="text-2xl font-bold text-blue-800">
+        <span class="text-blue-600">Ann</span> Doctors Mattresses
+      </h1>
+    </div>
+    
+    <nav class="hidden lg:flex space-x-8">
+      <div class="relative group">
+        <button class="nav-link flex items-center text-gray-700 hover:text-blue-600">
+          Mattress
+          <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Orthopedic Mattress</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Memory Foam Mattress</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Latex Mattress</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Spring Mattress</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">All Mattresses</a>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <button class="nav-link flex items-center text-gray-700 hover:text-blue-600">
+          Beds
+          <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Wooden Beds</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Metal Beds</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Storage Beds</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">All Beds</a>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <button class="nav-link flex items-center text-gray-700 hover:text-blue-600">
+          Combos
+          <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Mattress + Bed Combos</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Mattress + Pillow Combos</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Complete Sleep Solutions</a>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <button class="nav-link flex items-center text-gray-700 hover:text-blue-600">
+          Pillows
+          <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Memory Foam Pillows</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Neck Pain Pillows</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Orthopedic Pillows</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">All Pillows</a>
+        </div>
+      </div>
+      
+      <a href="#" class="nav-link text-red-600 hover:text-red-700 font-medium">Offers</a>
+      
+      <div class="relative group">
+        <button class="nav-link flex items-center text-gray-700 hover:text-blue-600">
+          Experience
+          <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Store Locator</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Sleep Lab</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Testimonials</a>
+          <a href="#" class="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">Blog</a>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-search"></i></a>
+      <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-user"></i></a>
+      <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>
+</body>
+</html>
